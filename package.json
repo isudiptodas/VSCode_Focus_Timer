@@ -1,0 +1,66 @@
+{
+  "name": "focus-timer",
+  "displayName": "Focus Timer",
+  "description": "A focus timer for helping developers stay productive on long coding hours without even compromising hydration & mental relaxation.",
+  "publisher": "isudiptodas",
+  "icon": "/src/images/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "focusTimer",
+          "title": "Focus Timer",
+          "icon": "media/timer.svg"
+        }
+      ]
+    },
+    "views": {
+      "focusTimer": [
+        {
+          "icon": "media/timer.svg",
+          "type": "webview",
+          "id": "focusTimerView",
+          "name": "Focus Timer"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "focus-timer.startTimer",
+        "title": "Focus Timer"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.19",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  }
+}
